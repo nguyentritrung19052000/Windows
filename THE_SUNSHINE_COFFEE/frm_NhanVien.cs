@@ -52,7 +52,7 @@ namespace THE_SUNSHINE_COFFEE
             gThongTin.Enabled = capnhat;
             gTimKiem.Enabled = !capnhat;
             btnLuu.Enabled = capnhat;
-            btnHuy.Enabled = capnhat;
+            btnHuy.Enabled = !capnhat;
         }
 
         private void btnThem_Click(object sender, EventArgs e)
@@ -69,6 +69,8 @@ namespace THE_SUNSHINE_COFFEE
             {
                 DataRow r = tblNhanVien.Select("MaNV='" + txtTimKiem.Text + "'")[0];
                 DSNV.Position = tblNhanVien.Rows.IndexOf(r);
+                capnhat = true;
+                enableButton();
             }
             catch (Exception ex)
             {
@@ -82,6 +84,8 @@ namespace THE_SUNSHINE_COFFEE
             try
             {
                 DSNV.RemoveAt(DSNV.Position);
+                capnhat = false;
+                tblNhanVien.ghi();
                 tblNhanVien.AcceptChanges();
             }
             catch (SqlException ex)
@@ -93,10 +97,19 @@ namespace THE_SUNSHINE_COFFEE
 
         private void btnLuu_Click(object sender, EventArgs e)
         {
-            DSNV.CancelCurrentEdit();
-            tblNhanVien.RejectChanges();
-            capnhat = false;
-            enableButton();
+            try
+            {
+                DSNV.EndCurrentEdit();
+                tblNhanVien.ghi();
+                tblNhanVien.AcceptChanges();
+                capnhat = false;
+                enableButton();
+                MessageBox.Show("Cập nhật thành công!!!");
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show(ex.Message);
+            }
         }
 
         private void btnHuy_Click(object sender, EventArgs e)

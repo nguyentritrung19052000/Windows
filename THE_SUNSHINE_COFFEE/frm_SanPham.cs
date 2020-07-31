@@ -50,25 +50,17 @@ namespace THE_SUNSHINE_COFFEE
             btnSua.Enabled = !capnhat;
             btnXoa.Enabled = !capnhat;
             btnLuu.Enabled = capnhat;
-            btnHuy.Enabled = !capnhat;
-            btnThoat.Enabled = !capnhat;
+            btnHuy.Enabled = capnhat;
+            btnThoat.Enabled = capnhat;
             gTimKiem.Enabled = !capnhat;
             gThongTin.Enabled = capnhat;
         }
 
         private void btnThem_Click(object sender, EventArgs e)
         {
-            try
-            {
-                DSQLSP.AddNew();
-                capnhat = true;
-                enableButton();
-                MessageBox.Show("Thêm thành công, Bạn có muốn Lưu không!!!");
-            }
-            catch (Exception ex)
-            {
-                MessageBox.Show(ex.Message);
-            }
+             DSQLSP.AddNew();
+             capnhat = true;
+             enableButton();
         }
 
         private void btnXoa_Click(object sender, EventArgs e)
@@ -76,10 +68,8 @@ namespace THE_SUNSHINE_COFFEE
             try
             {
                 DSQLSP.RemoveAt(DSQLSP.Position);
-
-                daSanPham.Update(tblSanPham);
                 tblSanPham.AcceptChanges();
-                capnhat = true;
+                capnhat = false;
                 enableButton();
             }
             catch (SqlException ex)
@@ -99,6 +89,8 @@ namespace THE_SUNSHINE_COFFEE
 
         private void btnSua_Click(object sender, EventArgs e)
         {
+            DataRow r = tblSanPham.Select("MaSP='" + txtTimKiem.Text + "'")[0];
+            DSQLSP.Position = tblSanPham.Rows.IndexOf(r);
             capnhat = true;
             enableButton();
         }
@@ -108,8 +100,7 @@ namespace THE_SUNSHINE_COFFEE
             try
             {
                 DSQLSP.EndCurrentEdit();
-                daSanPham.Update(tblSanPham);
-
+                tblSanPham.ghi();
                 tblSanPham.AcceptChanges();
                 MessageBox.Show("Cập nhật thành công!!!");
                 capnhat = false;

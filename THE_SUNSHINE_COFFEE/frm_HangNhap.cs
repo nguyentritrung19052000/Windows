@@ -48,9 +48,9 @@ namespace THE_SUNSHINE_COFFEE
             btnThem.Enabled = !capnhat;
             btnXoa.Enabled = !capnhat;
             btnSua.Enabled = !capnhat;
-            btnLuu.Enabled = !capnhat;
-            btnHuy.Enabled = !capnhat;
-            btnThoat.Enabled = !capnhat;
+            btnLuu.Enabled = capnhat;
+            btnHuy.Enabled = capnhat;
+            btnThoat.Enabled = capnhat;
             gThongTin.Enabled = capnhat;
             gTimKiem.Enabled = capnhat;
         }
@@ -88,10 +88,10 @@ namespace THE_SUNSHINE_COFFEE
             try
             {
                 DSHN.EndCurrentEdit();
-                daHangNhap.Update(tblHangNhap);
+                tblHangNhap.ghi();
                 tblHangNhap.AcceptChanges();
                 capnhat = false;
-                enableButton();
+                enableButton(); 
             }
             catch (Exception ex)
             {

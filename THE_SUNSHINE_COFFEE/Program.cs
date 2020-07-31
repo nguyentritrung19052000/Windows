@@ -20,7 +20,7 @@ namespace THE_SUNSHINE_COFFEE
             Application.SetCompatibleTextRenderingDefault(false);
 
             BonusSkins.Register();
-            Application.Run(new frm_Main());
+            Application.Run(new frm_SanPham());
         }
     }
 }
