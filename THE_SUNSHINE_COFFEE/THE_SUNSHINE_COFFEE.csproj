@@ -119,6 +119,7 @@
     <Compile Include="frm_SanPham.Designer.cs">
       <DependentUpon>frm_SanPham.cs</DependentUpon>
     </Compile>
+    <Compile Include="Module\sfbiwefuiwbreugf.cs" />
     <Compile Include="Module\XLHANGNHAP.cs">
       <SubType>Component</SubType>
     </Compile>
