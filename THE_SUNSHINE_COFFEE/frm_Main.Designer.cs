@@ -38,13 +38,14 @@
             this.btnDoiMatKhau = new DevExpress.XtraBars.BarButtonItem();
             this.btnSanPham = new DevExpress.XtraBars.BarButtonItem();
             this.btnBan = new DevExpress.XtraBars.BarButtonItem();
+            this.btnHangNhap = new DevExpress.XtraBars.BarButtonItem();
             this.ribbonPage1 = new DevExpress.XtraBars.Ribbon.RibbonPage();
             this.ribbonPageGroup1 = new DevExpress.XtraBars.Ribbon.RibbonPageGroup();
             this.ribbonPageGroup2 = new DevExpress.XtraBars.Ribbon.RibbonPageGroup();
             this.ribbonPageGroup3 = new DevExpress.XtraBars.Ribbon.RibbonPageGroup();
             this.ribbonPageGroup4 = new DevExpress.XtraBars.Ribbon.RibbonPageGroup();
             this.tabControlMain = new System.Windows.Forms.TabControl();
-            this.btnHangNhap = new DevExpress.XtraBars.BarButtonItem();
+            this.ribbonPageGroup5 = new DevExpress.XtraBars.Ribbon.RibbonPageGroup();
             ((System.ComponentModel.ISupportInitialize)(this.ribbonControl1)).BeginInit();
             this.SuspendLayout();
             // 
@@ -132,13 +133,22 @@
             this.btnBan.Name = "btnBan";
             this.btnBan.ItemClick += new DevExpress.XtraBars.ItemClickEventHandler(this.btnBan_ItemClick);
             // 
+            // btnHangNhap
+            // 
+            this.btnHangNhap.Caption = "Hàng Nhập";
+            this.btnHangNhap.Id = 9;
+            this.btnHangNhap.ImageOptions.SvgImage = ((DevExpress.Utils.Svg.SvgImage)(resources.GetObject("btnHangNhap.ImageOptions.SvgImage")));
+            this.btnHangNhap.Name = "btnHangNhap";
+            this.btnHangNhap.ItemClick += new DevExpress.XtraBars.ItemClickEventHandler(this.btnHangNhap_ItemClick);
+            // 
             // ribbonPage1
             // 
             this.ribbonPage1.Groups.AddRange(new DevExpress.XtraBars.Ribbon.RibbonPageGroup[] {
             this.ribbonPageGroup1,
             this.ribbonPageGroup2,
             this.ribbonPageGroup3,
-            this.ribbonPageGroup4});
+            this.ribbonPageGroup4,
+            this.ribbonPageGroup5});
             this.ribbonPage1.Name = "ribbonPage1";
             // 
             // ribbonPageGroup1
@@ -179,13 +189,10 @@
             this.tabControlMain.Size = new System.Drawing.Size(848, 353);
             this.tabControlMain.TabIndex = 2;
             // 
-            // btnHangNhap
+            // ribbonPageGroup5
             // 
-            this.btnHangNhap.Caption = "Hàng Nhập";
-            this.btnHangNhap.Id = 9;
-            this.btnHangNhap.ImageOptions.SvgImage = ((DevExpress.Utils.Svg.SvgImage)(resources.GetObject("btnHangNhap.ImageOptions.SvgImage")));
-            this.btnHangNhap.Name = "btnHangNhap";
-            this.btnHangNhap.ItemClick += new DevExpress.XtraBars.ItemClickEventHandler(this.btnHangNhap_ItemClick);
+            this.ribbonPageGroup5.Name = "ribbonPageGroup5";
+            this.ribbonPageGroup5.Text = "ribbonPageGroup5";
             // 
             // frm_Main
             // 
@@ -221,5 +228,6 @@
         private DevExpress.XtraBars.BarButtonItem btnSanPham;
         private DevExpress.XtraBars.BarButtonItem btnBan;
         private DevExpress.XtraBars.BarButtonItem btnHangNhap;
+        private DevExpress.XtraBars.Ribbon.RibbonPageGroup ribbonPageGroup5;
     }
 }
