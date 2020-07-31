@@ -89,7 +89,7 @@ namespace THE_SUNSHINE_COFFEE
             try
             {
                 DSQLBAN.EndCurrentEdit();
-                daBan.Update(tblBan);
+                tblBan.ghi();
                 tblBan.AcceptChanges();
                 capnhat = false;
                 enableButton();
