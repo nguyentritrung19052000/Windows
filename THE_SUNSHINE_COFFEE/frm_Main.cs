@@ -27,25 +27,26 @@ namespace THE_SUNSHINE_COFFEE
                     btnDangXuat.Enabled = true;
                     btnThoat.Enabled = true;
                     btnDoiMatKhau.Enabled = true;
-                    btnNhanVien.Enabled = true;
+                    rbQuanLy.Enabled = true;
                     btnHoaDon.Enabled = true;
-                    btnThongke.Enabled = true;
+                    btnThongKe.Enabled = true;
+                    
                     break;
                 case 2:
                     btnDangXuat.Enabled = true;
                     btnThoat.Enabled = true;
                     btnDoiMatKhau.Enabled = true;
-                    btnNhanVien.Enabled = false;
+                    rbQuanLy.Enabled = false;
                     btnHoaDon.Enabled = true;
-                    btnThongke.Enabled = false;
+                    btnThongKe.Enabled = false;
                     break;
                 default:
                     btnDangXuat.Enabled = false;
                     btnThoat.Enabled = false;
                     btnDoiMatKhau.Enabled = false;
-                    btnNhanVien.Enabled = false;
+                    rbQuanLy.Enabled = false;
                     btnHoaDon.Enabled = false;
-                    btnThongke.Enabled = false;
+                    btnThongKe.Enabled = false;
                     break;
             }
 
@@ -185,9 +186,51 @@ namespace THE_SUNSHINE_COFFEE
             }
         }
 
-        private void ribbonControl1_Click(object sender, EventArgs e)
-        {
+     
 
+        private void btnHoaDon_ItemClick(object sender, DevExpress.XtraBars.ItemClickEventArgs e)
+        {
+            int index = tabControlMain.TabPages.IndexOfKey("tabPageHoaDonBan");
+            if (index >= 1)
+            {
+                tabControlMain.SelectedIndex = index;
+            }
+            else
+            {
+                frm_HoaDonBan f = new frm_HoaDonBan();
+                TabPage p = new TabPage(f.Text);
+                p.Name = "tabPageHoaDonBan";
+                f.TopLevel = false;
+                p.Controls.Add(f);
+                f.Dock = DockStyle.Fill;
+                f.FormBorderStyle = FormBorderStyle.None;
+                tabControlMain.TabPages.Add(p);
+                tabControlMain.SelectedTab = p;
+                f.Show();
+            }
+        }
+
+        private void btnThongKe_ItemClick(object sender, DevExpress.XtraBars.ItemClickEventArgs e)
+        {
+            int index = tabControlMain.TabPages.IndexOfKey("tabPageThongKe");
+            if (index >= 1)
+            {
+                tabControlMain.SelectedIndex = index;
+            }
+            else
+            {
+                frm_ThongKe f = new frm_ThongKe();
+                TabPage p = new TabPage(f.Text);
+                p.Name = "tabPageThongKe";
+                f.TopLevel = false;
+                p.Controls.Add(f);
+                f.Dock = DockStyle.Fill;
+                f.FormBorderStyle = FormBorderStyle.None;
+                tabControlMain.TabPages.Add(p);
+                tabControlMain.SelectedTab = p;
+                f.Show();
+            }
         }
     }
 }
+///fcbhxj

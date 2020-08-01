@@ -12,7 +12,7 @@ namespace THE_SUNSHINE_COFFEE.Modules
     class XLBANG : DataTable
     {
         #region Fields
-        public static string cnnStr = @"Data Source=DESKTOP-S6VR9TT\SQLEXPRESS;Initial Catalog=QL_CoffeeSunShine;Integrated Security=True";
+        public static string cnnStr = @"Data Source=TRI-TRUNG\SQLEXPRESS;Initial Catalog=QL_CoffeeSunShine;Integrated Security=True";
         private static SqlConnection _cnn;
         private SqlDataAdapter _da = new SqlDataAdapter();
         private string _query; // Cau truy van

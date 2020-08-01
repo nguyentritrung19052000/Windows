@@ -147,5 +147,19 @@ namespace THE_SUNSHINE_COFFEE
         {
             
         }
+
+        private void txtTimKiem_TextChanged(object sender, EventArgs e)
+        {
+            if (rdTheoMa.Checked == true)
+            {
+                string std = string.Format("MaNV like '%{0}%'", txtTimKiem.Text);
+                tblNhanVien.DefaultView.RowFilter = std;
+            }
+            else
+            {
+                string std = string.Format("TenNV like '%{0}%'", txtTimKiem.Text);
+                tblNhanVien.DefaultView.RowFilter = std;
+            }
+        }
     }
 }
