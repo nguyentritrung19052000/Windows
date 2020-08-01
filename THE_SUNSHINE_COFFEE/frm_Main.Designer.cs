@@ -44,6 +44,7 @@
             this.ribbonPageGroup2 = new DevExpress.XtraBars.Ribbon.RibbonPageGroup();
             this.ribbonPageGroup3 = new DevExpress.XtraBars.Ribbon.RibbonPageGroup();
             this.ribbonPageGroup4 = new DevExpress.XtraBars.Ribbon.RibbonPageGroup();
+            this.tabControlMain = new System.Windows.Forms.TabControl();
             this.ribbonPageGroup5 = new DevExpress.XtraBars.Ribbon.RibbonPageGroup();
             this.tabControlMain = new System.Windows.Forms.TabControl();
             ((System.ComponentModel.ISupportInitialize)(this.ribbonControl1)).BeginInit();
@@ -63,15 +64,14 @@
             this.btnDoiMatKhau,
             this.btnSanPham,
             this.btnBan,
-            this.btnHangNhap});
+            this.btnHangNhap,
+            this.barButtonItem1});
             this.ribbonControl1.Location = new System.Drawing.Point(0, 0);
-            this.ribbonControl1.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
             this.ribbonControl1.MaxItemId = 10;
             this.ribbonControl1.Name = "ribbonControl1";
             this.ribbonControl1.Pages.AddRange(new DevExpress.XtraBars.Ribbon.RibbonPage[] {
             this.ribbonPage1});
-            this.ribbonControl1.Size = new System.Drawing.Size(989, 176);
-            this.ribbonControl1.Click += new System.EventHandler(this.ribbonControl1_Click);
+            this.ribbonControl1.Size = new System.Drawing.Size(848, 141);
             // 
             // btnDangXuat
             // 
@@ -179,6 +179,7 @@
             // ribbonPageGroup4
             // 
             this.ribbonPageGroup4.ItemLinks.Add(this.btnThongke);
+            this.ribbonPageGroup4.ItemLinks.Add(this.barButtonItem1);
             this.ribbonPageGroup4.Name = "ribbonPageGroup4";
             this.ribbonPageGroup4.Text = "ribbonPageGroup4";
             // 
@@ -194,14 +195,19 @@
             this.tabControlMain.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
             this.tabControlMain.Name = "tabControlMain";
             this.tabControlMain.SelectedIndex = 0;
-            this.tabControlMain.Size = new System.Drawing.Size(989, 432);
+            this.tabControlMain.Size = new System.Drawing.Size(848, 353);
             this.tabControlMain.TabIndex = 2;
+            // 
+            // ribbonPageGroup5
+            // 
+            this.ribbonPageGroup5.Name = "ribbonPageGroup5";
+            this.ribbonPageGroup5.Text = "ribbonPageGroup5";
             // 
             // frm_Main
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(989, 608);
+            this.ClientSize = new System.Drawing.Size(848, 494);
             this.Controls.Add(this.tabControlMain);
             this.Controls.Add(this.ribbonControl1);
             this.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
@@ -232,6 +238,7 @@
         private DevExpress.XtraBars.BarButtonItem btnSanPham;
         private DevExpress.XtraBars.BarButtonItem btnBan;
         private DevExpress.XtraBars.BarButtonItem btnHangNhap;
+        private DevExpress.XtraBars.BarButtonItem barButtonItem1;
         private DevExpress.XtraBars.Ribbon.RibbonPageGroup ribbonPageGroup5;
     }
 }
