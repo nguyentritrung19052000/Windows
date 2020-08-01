@@ -52,7 +52,7 @@ namespace THE_SUNSHINE_COFFEE
             btnHuy.Enabled = capnhat;
             btnThoat.Enabled = capnhat;
             gThongTin.Enabled = capnhat;
-            gTimKiem.Enabled = capnhat;
+            gTimKiem.Enabled = !capnhat;
         }
 
         private void btnThem_Click(object sender, EventArgs e)
@@ -64,6 +64,8 @@ namespace THE_SUNSHINE_COFFEE
 
         private void btnSua_Click(object sender, EventArgs e)
         {
+            DataRow r = tblHangNhap.Select("TenHN='" + txtTimKiem.Text + "'")[0];
+            DSHN.Position = tblHangNhap.Rows.IndexOf(r);
             capnhat = true;
             enableButton();
         }
@@ -73,7 +75,8 @@ namespace THE_SUNSHINE_COFFEE
             try
             {
                 DSHN.RemoveAt(DSHN.Position);
-                daHangNhap.Update(tblHangNhap);
+                capnhat = false;
+                tblHangNhap.ghi();
                 tblHangNhap.AcceptChanges();
             }
             catch (SqlException ex)
@@ -110,6 +113,12 @@ namespace THE_SUNSHINE_COFFEE
         private void btnThoat_Click(object sender, EventArgs e)
         {
             this.Close();
+        }
+
+        private void dgvDSHN_DataBindingComplete(object sender, DataGridViewBindingCompleteEventArgs e)
+        {
+            foreach (DataGridViewRow r in dgvDSHN.Rows)
+            r.Cells[0].Value = r.Index + 1;
         }
     }
 }

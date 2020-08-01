@@ -51,7 +51,7 @@ namespace THE_SUNSHINE_COFFEE
             btnXoa.Enabled = !capnhat;
             btnLuu.Enabled = capnhat;
             btnHuy.Enabled = capnhat;
-            btnThoat.Enabled = capnhat;
+            btnThoat.Enabled = !capnhat;
             gTimKiem.Enabled = !capnhat;
             gThongTin.Enabled = capnhat;
         }
@@ -68,6 +68,7 @@ namespace THE_SUNSHINE_COFFEE
             try
             {
                 DSQLSP.RemoveAt(DSQLSP.Position);
+                tblSanPham.ghi();
                 tblSanPham.AcceptChanges();
                 capnhat = false;
                 enableButton();
@@ -115,6 +116,12 @@ namespace THE_SUNSHINE_COFFEE
         private void btnThoat_Click(object sender, EventArgs e)
         {
             this.Close();
+        }
+
+        private void dgvDSSP_DataBindingComplete(object sender, DataGridViewBindingCompleteEventArgs e)
+        {
+            foreach (DataGridViewRow r in dgvDSSP.Rows)
+                r.Cells[0].Value = r.Index + 1;
         }
     }
 }

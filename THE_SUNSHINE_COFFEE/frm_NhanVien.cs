@@ -52,7 +52,7 @@ namespace THE_SUNSHINE_COFFEE
             gThongTin.Enabled = capnhat;
             gTimKiem.Enabled = !capnhat;
             btnLuu.Enabled = capnhat;
-            btnHuy.Enabled = !capnhat;
+            btnHuy.Enabled = capnhat;
         }
 
         private void btnThem_Click(object sender, EventArgs e)
@@ -91,7 +91,7 @@ namespace THE_SUNSHINE_COFFEE
             catch (SqlException ex)
             {
                 tblNhanVien.RejectChanges();
-                MessageBox.Show("Xoa that bai");
+                MessageBox.Show("Xóa thất bại!!!");
             }
         }
 
@@ -137,7 +137,7 @@ namespace THE_SUNSHINE_COFFEE
             radNu.Checked = !radNam.Checked;
         }
 
-        private void dgvDSNV_DataBindingComplete(object sender, DataGridViewBindingCompleteEventArgs e)
+        private void dgvDSNV_DataBindingComplete_1(object sender, DataGridViewBindingCompleteEventArgs e)
         {
             foreach (DataGridViewRow r in dgvDSNV.Rows)
                 r.Cells[0].Value = r.Index + 1;

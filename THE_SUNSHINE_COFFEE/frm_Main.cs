@@ -184,5 +184,10 @@ namespace THE_SUNSHINE_COFFEE
                 f.Show();
             }
         }
+
+        private void ribbonControl1_Click(object sender, EventArgs e)
+        {
+
+        }
     }
 }

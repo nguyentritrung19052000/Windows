@@ -46,8 +46,8 @@ namespace THE_SUNSHINE_COFFEE
             btnSua.Enabled = !capnhat;
             btnXoa.Enabled = !capnhat;
             btnLuu.Enabled = capnhat;
-            btnHuy.Enabled = !capnhat;
-            btnThoat.Enabled = !capnhat;
+            btnHuy.Enabled = capnhat;
+            btnThoat.Enabled = capnhat;
         }
 
         private void LoadBan()
@@ -112,6 +112,12 @@ namespace THE_SUNSHINE_COFFEE
         private void btnThoat_Click(object sender, EventArgs e)
         {
             this.Close();
+        }
+
+        private void dgvqlban_DataBindingComplete(object sender, DataGridViewBindingCompleteEventArgs e)
+        {
+            foreach (DataGridViewRow r in dgvqlban.Rows)
+                r.Cells[0].Value = r.Index + 1;
         }
     }
 }
