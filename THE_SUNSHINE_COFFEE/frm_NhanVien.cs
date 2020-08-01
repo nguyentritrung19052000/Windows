@@ -145,7 +145,7 @@ namespace THE_SUNSHINE_COFFEE
 
         private void dgvDSNV_CellContentClick(object sender, DataGridViewCellEventArgs e)
         {
-
+            .
         }
     }
 }
