@@ -39,16 +39,16 @@
             this.txtma = new System.Windows.Forms.TextBox();
             this.btnSua = new DevExpress.XtraEditors.SimpleButton();
             this.dgvqlban = new System.Windows.Forms.DataGridView();
+            this.STT = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.Maban = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.TenBan = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.KhuVuc = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.btnThem = new DevExpress.XtraEditors.SimpleButton();
             this.label5 = new System.Windows.Forms.Label();
             this.label3 = new System.Windows.Forms.Label();
             this.label2 = new System.Windows.Forms.Label();
             this.panel1 = new System.Windows.Forms.Panel();
             this.pnThongtin = new System.Windows.Forms.Panel();
-            this.STT = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.Maban = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.TenBan = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.KhuVuc = new System.Windows.Forms.DataGridViewTextBoxColumn();
             ((System.ComponentModel.ISupportInitialize)(this.dgvqlban)).BeginInit();
             this.panel1.SuspendLayout();
             this.pnThongtin.SuspendLayout();
@@ -68,6 +68,7 @@
             // 
             this.btnThoat.Appearance.Font = new System.Drawing.Font("Tahoma", 9F);
             this.btnThoat.Appearance.Options.UseFont = true;
+            this.btnThoat.ImageOptions.Image = ((System.Drawing.Image)(resources.GetObject("btnThoat.ImageOptions.Image")));
             this.btnThoat.Location = new System.Drawing.Point(234, 236);
             this.btnThoat.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
             this.btnThoat.Name = "btnThoat";
@@ -80,6 +81,7 @@
             // 
             this.btnHuy.Appearance.Font = new System.Drawing.Font("Tahoma", 9F);
             this.btnHuy.Appearance.Options.UseFont = true;
+            this.btnHuy.ImageOptions.Image = ((System.Drawing.Image)(resources.GetObject("btnHuy.ImageOptions.Image")));
             this.btnHuy.Location = new System.Drawing.Point(125, 236);
             this.btnHuy.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
             this.btnHuy.Name = "btnHuy";
@@ -102,6 +104,7 @@
             // 
             this.btnLuu.Appearance.Font = new System.Drawing.Font("Tahoma", 9F);
             this.btnLuu.Appearance.Options.UseFont = true;
+            this.btnLuu.ImageOptions.Image = ((System.Drawing.Image)(resources.GetObject("btnLuu.ImageOptions.Image")));
             this.btnLuu.Location = new System.Drawing.Point(13, 236);
             this.btnLuu.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
             this.btnLuu.Name = "btnLuu";
@@ -125,6 +128,7 @@
             // 
             this.btnXoa.Appearance.Font = new System.Drawing.Font("Tahoma", 9F);
             this.btnXoa.Appearance.Options.UseFont = true;
+            this.btnXoa.ImageOptions.Image = ((System.Drawing.Image)(resources.GetObject("btnXoa.ImageOptions.Image")));
             this.btnXoa.Location = new System.Drawing.Point(234, 171);
             this.btnXoa.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
             this.btnXoa.Name = "btnXoa";
@@ -148,6 +152,7 @@
             // 
             this.btnSua.Appearance.Font = new System.Drawing.Font("Tahoma", 9F);
             this.btnSua.Appearance.Options.UseFont = true;
+            this.btnSua.ImageOptions.Image = ((System.Drawing.Image)(resources.GetObject("btnSua.ImageOptions.Image")));
             this.btnSua.Location = new System.Drawing.Point(125, 171);
             this.btnSua.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
             this.btnSua.Name = "btnSua";
@@ -158,7 +163,7 @@
             // 
             // dgvqlban
             // 
-            this.dgvqlban.BackgroundColor = System.Drawing.Color.FromArgb(((int)(((byte)(224)))), ((int)(((byte)(224)))), ((int)(((byte)(224)))));
+            this.dgvqlban.BackgroundColor = System.Drawing.Color.Gainsboro;
             this.dgvqlban.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.dgvqlban.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
             this.STT,
@@ -174,6 +179,38 @@
             this.dgvqlban.Size = new System.Drawing.Size(622, 266);
             this.dgvqlban.TabIndex = 23;
             this.dgvqlban.DataBindingComplete += new System.Windows.Forms.DataGridViewBindingCompleteEventHandler(this.dgvqlban_DataBindingComplete);
+            // 
+            // STT
+            // 
+            this.STT.DataPropertyName = "STT";
+            this.STT.HeaderText = "STT";
+            this.STT.MinimumWidth = 6;
+            this.STT.Name = "STT";
+            this.STT.Width = 75;
+            // 
+            // Maban
+            // 
+            this.Maban.DataPropertyName = "MaBan";
+            this.Maban.HeaderText = "Mã Bàn";
+            this.Maban.MinimumWidth = 6;
+            this.Maban.Name = "Maban";
+            this.Maban.Width = 125;
+            // 
+            // TenBan
+            // 
+            this.TenBan.DataPropertyName = "TenBan";
+            this.TenBan.HeaderText = "Tên Bàn";
+            this.TenBan.MinimumWidth = 6;
+            this.TenBan.Name = "TenBan";
+            this.TenBan.Width = 125;
+            // 
+            // KhuVuc
+            // 
+            this.KhuVuc.DataPropertyName = "KhuVuc";
+            this.KhuVuc.HeaderText = "Khu Vực";
+            this.KhuVuc.MinimumWidth = 6;
+            this.KhuVuc.Name = "KhuVuc";
+            this.KhuVuc.Width = 150;
             // 
             // btnThem
             // 
@@ -220,7 +257,7 @@
             // 
             // panel1
             // 
-            this.panel1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(185)))), ((int)(((byte)(226)))), ((int)(((byte)(238)))));
+            this.panel1.BackColor = System.Drawing.Color.Gainsboro;
             this.panel1.Controls.Add(this.label1);
             this.panel1.Dock = System.Windows.Forms.DockStyle.Top;
             this.panel1.Location = new System.Drawing.Point(358, 0);
@@ -250,38 +287,6 @@
             this.pnThongtin.Name = "pnThongtin";
             this.pnThongtin.Size = new System.Drawing.Size(358, 325);
             this.pnThongtin.TabIndex = 22;
-            // 
-            // STT
-            // 
-            this.STT.DataPropertyName = "STT";
-            this.STT.HeaderText = "STT";
-            this.STT.MinimumWidth = 6;
-            this.STT.Name = "STT";
-            this.STT.Width = 75;
-            // 
-            // Maban
-            // 
-            this.Maban.DataPropertyName = "MaBan";
-            this.Maban.HeaderText = "Mã Bàn";
-            this.Maban.MinimumWidth = 6;
-            this.Maban.Name = "Maban";
-            this.Maban.Width = 125;
-            // 
-            // TenBan
-            // 
-            this.TenBan.DataPropertyName = "TenBan";
-            this.TenBan.HeaderText = "Tên Bàn";
-            this.TenBan.MinimumWidth = 6;
-            this.TenBan.Name = "TenBan";
-            this.TenBan.Width = 125;
-            // 
-            // KhuVuc
-            // 
-            this.KhuVuc.DataPropertyName = "KhuVuc";
-            this.KhuVuc.HeaderText = "Khu Vực";
-            this.KhuVuc.MinimumWidth = 6;
-            this.KhuVuc.Name = "KhuVuc";
-            this.KhuVuc.Width = 150;
             // 
             // frm_DMBan
             // 

@@ -119,6 +119,9 @@ namespace THE_SUNSHINE_COFFEE
             }
         }
 
+
+
+
         private void btnSanPham_ItemClick(object sender, DevExpress.XtraBars.ItemClickEventArgs e)
         {
             int index = tabControlMain.TabPages.IndexOfKey("tabPageSanPham");
