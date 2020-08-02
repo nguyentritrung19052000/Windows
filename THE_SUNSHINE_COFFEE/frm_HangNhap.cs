@@ -50,7 +50,7 @@ namespace THE_SUNSHINE_COFFEE
             btnSua.Enabled = !capnhat;
             btnLuu.Enabled = capnhat;
             btnHuy.Enabled = capnhat;
-            btnThoat.Enabled = capnhat;
+            btnThoat.Enabled = !capnhat;
             gThongTin.Enabled = capnhat;
             gTimKiem.Enabled = !capnhat;
         }
@@ -119,6 +119,17 @@ namespace THE_SUNSHINE_COFFEE
         {
             foreach (DataGridViewRow r in dgvDSHN.Rows)
             r.Cells[0].Value = r.Index + 1;
+        }
+
+        private void btnTinhTien_Click(object sender, EventArgs e)
+        {
+            int dongia;
+            int soluong;
+            dongia = Convert.ToInt16(txtDonGia.Text);
+            soluong = Convert.ToInt16(txtSoLuong.Text);
+            int tien;
+            tien = dongia * soluong;
+            txtTongTien.Text = tien.ToString();
         }
     }
 }

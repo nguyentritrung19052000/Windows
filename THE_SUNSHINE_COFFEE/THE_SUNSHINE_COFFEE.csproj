@@ -149,6 +149,11 @@
     <Compile Include="frm_ThongKe.Designer.cs">
       <DependentUpon>frm_ThongKe.cs</DependentUpon>
     </Compile>
+    <Compile Include="HoaDon1.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>HoaDon1.xsd</DependentUpon>
+    </Compile>
     <Compile Include="Module\XLHOADON.cs">
       <SubType>Component</SubType>
     </Compile>
@@ -230,6 +235,17 @@
     </None>
     <None Include="dsTinhTien.xss">
       <DependentUpon>dsTinhTien.xsd</DependentUpon>
+    </None>
+    <None Include="HoaDon1.xsc">
+      <DependentUpon>HoaDon1.xsd</DependentUpon>
+    </None>
+    <None Include="HoaDon1.xsd">
+      <SubType>Designer</SubType>
+      <Generator>MSDataSetGenerator</Generator>
+      <LastGenOutput>HoaDon1.Designer.cs</LastGenOutput>
+    </None>
+    <None Include="HoaDon1.xss">
+      <DependentUpon>HoaDon1.xsd</DependentUpon>
     </None>
     <None Include="Properties\Settings.settings">
       <Generator>SettingsSingleFileGenerator</Generator>
