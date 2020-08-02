@@ -32,7 +32,7 @@ namespace THE_SUNSHINE_COFFEE
             DataRow[] r = tblNhanVien.Select("TaiKhoan='" + txtUsername.Text + "' and MatKhau='" + txtPassword.Text + "'");
             if (r.Count() > 0)
             {
-                fMain.Text = "Quản Lý Nhà Sách - Chào " + r[0]["TenNV"].ToString();
+                fMain.Text = "The SunShine Coffee - Chào " + r[0]["TenNV"].ToString();
                 fMain.maNV = r[0]["MaNV"].ToString();
                 fMain.PhanQuyen((int)r[0]["MaLTK"]);
                 this.Close();
@@ -42,3 +42,4 @@ namespace THE_SUNSHINE_COFFEE
         }
     }
 }
+////
