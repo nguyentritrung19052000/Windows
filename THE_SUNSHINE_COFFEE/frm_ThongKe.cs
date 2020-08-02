@@ -21,7 +21,8 @@ namespace THE_SUNSHINE_COFFEE
 
         private void frm_ThongKe_Load(object sender, EventArgs e)
         {
-            string query = "select count(MaHD) as 'Tong so hoa don' from HoaDonBan";
+            string query = "select count(MaHD) as 'Tong so hoa don', sum(ThanhTien) as 'Tong Tien', sum(SoLuong) as 'Tong So Luong'" +
+                " from HoaDonBan";
             SqlDataAdapter da = new SqlDataAdapter(query, XLBANG.cnnStr);
             try
             {
@@ -33,7 +34,6 @@ namespace THE_SUNSHINE_COFFEE
             {
                 MessageBox.Show(ex.ToString());
             }
-
         }
     }
 }

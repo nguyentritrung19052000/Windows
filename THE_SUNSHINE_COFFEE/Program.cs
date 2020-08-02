@@ -20,8 +20,7 @@ namespace THE_SUNSHINE_COFFEE
             Application.SetCompatibleTextRenderingDefault(false);
 
             BonusSkins.Register();
-            Application.Run(new frm_ThongKe());
+            Application.Run(new frm_HoaDonBan());
         }
     }
 }
-//////

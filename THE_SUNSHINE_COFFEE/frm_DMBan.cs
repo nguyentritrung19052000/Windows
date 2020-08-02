@@ -47,7 +47,7 @@ namespace THE_SUNSHINE_COFFEE
             btnXoa.Enabled = !capnhat;
             btnLuu.Enabled = capnhat;
             btnHuy.Enabled = capnhat;
-            btnThoat.Enabled = capnhat;
+            btnThoat.Enabled = !capnhat;
         }
 
         private void LoadBan()

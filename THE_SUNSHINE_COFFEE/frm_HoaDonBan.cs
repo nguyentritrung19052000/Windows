@@ -16,6 +16,7 @@ namespace THE_SUNSHINE_COFFEE
     public partial class frm_HoaDonBan : DevExpress.XtraEditors.XtraForm
     {
         XLHOADON tblHoaDon;
+        XLNHANVIEN tblNhanVien;
         BindingManagerBase DSHD;
         bool capnhat = false;
         public frm_HoaDonBan()
@@ -91,9 +92,15 @@ namespace THE_SUNSHINE_COFFEE
 
         private void frm_HoaDonBan_Load(object sender, EventArgs e)
         {
+            // TODO: This line of code loads data into the 'hoaDon1.SanPham' table. You can move, or remove it, as needed.
+            this.sanPhamTableAdapter.Fill(this.hoaDon1.SanPham);
+            // TODO: This line of code loads data into the 'hoaDon1.NhanVien' table. You can move, or remove it, as needed.
+            this.nhanVienTableAdapter.Fill(this.hoaDon1.NhanVien);
             tblHoaDon = new XLHOADON();
             DSHD = this.BindingContext[tblHoaDon];
             loadNhanVien();
+
+
         }
 
         private void loadNhanVien()
@@ -101,14 +108,26 @@ namespace THE_SUNSHINE_COFFEE
             dgvDSHDB.AutoGenerateColumns = false;
             dgvDSHDB.DataSource = tblHoaDon;
             txtMaHD.DataBindings.Add("text", tblHoaDon, "MaHD", true);
-            txtMaNV.DataBindings.Add("text", tblHoaDon, "MaNV", true);
+            cbMaNV.DataBindings.Add("SelectedValue", tblHoaDon, "MaNV", true);
             dateNgayHD.DataBindings.Add("text", tblHoaDon, "NgayHD", true);
-            txtMaSP.DataBindings.Add("text", tblHoaDon, "MaSP", true);
             txtSoLuong.DataBindings.Add("text", tblHoaDon, "SoLuong", true);
             txtDonGia.DataBindings.Add("text", tblHoaDon, "DonGia", true);
-           // txtThanhTien.DataBindings.Add("text", tblHoaDon, "ThanhTien", true);
+            txtThanhTien.DataBindings.Add("text", tblHoaDon, "ThanhTien", true);
             DSHD = this.BindingContext[tblHoaDon];
             enableButton();
+        }
+
+        private void loadCBONhanVien()
+        {
+            cbMaNV.DataSource = tblNhanVien;
+            cbMaNV.DisplayMember = "MaNV";
+            cbMaNV.ValueMember = "TenNV";
+        }
+        
+        private void LoadDGVHoaDon()
+        {
+            dgvDSHDB.AllowUserToOrderColumns = false;
+            dgvDSHDB.DataSource = tblHoaDon;
         }
 
         private void enableButton()
@@ -118,6 +137,7 @@ namespace THE_SUNSHINE_COFFEE
             btnXoa.Enabled = !capnhat;
             btnLuu.Enabled = capnhat;
             btnHuy.Enabled = !capnhat;
+            txtThanhTien.Enabled = capnhat;
         }
 
         private void dgvDSHDB_DataBindingComplete(object sender, DataGridViewBindingCompleteEventArgs e)
@@ -132,5 +152,16 @@ namespace THE_SUNSHINE_COFFEE
             f.WindowState = FormWindowState.Maximized;
             f.Show();
         }
+
+        private void btnTinhTien_Click(object sender, EventArgs e)
+        {
+            int dongia;
+            int soluong;
+            dongia = Convert.ToInt16(txtDonGia.Text);
+            soluong = Convert.ToInt16(txtSoLuong.Text);
+            int tien;
+            tien = dongia * soluong;
+            txtThanhTien.Text = tien.ToString();
+        }
     }
-}
+}   
